@@ -1,0 +1,415 @@
+:root {
+    --color1 : mediumseagreen;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    min-height: 100dvh;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.section {
+    padding: 1rem;
+}
+
+.hoverAnim {
+    transition: 0.3s;
+
+    &:hover {
+        transition: 0.3s;
+        transform: translateY(-4px);
+    }
+}
+
+.cta {
+    padding: 0.5rem;
+    color: black;
+    border-radius: 0.5rem;
+    border-right: solid black 2px;
+    border-bottom: solid black 2px;
+    background-color: var(--color1);
+    text-decoration: none;
+    box-shadow: 1px 1px 1px 1px rgba(200, 200, 200, 0.8);
+    width: fit-content;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+
+#bcgImg1 {
+    z-index: -100;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    bottom: -1rem;
+    
+    @media(max-width: 1024px) {
+        opacity: 0.2;
+        width: 20rem;
+    }
+
+    @media(min-width: 1024px) {
+        width: 24rem;
+    }
+}
+
+header {
+    z-index: 4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+}
+
+#logo {
+    width: 2rem;
+
+    @media(min-width: 767px) {
+        width: 4rem;
+    }
+}
+
+#brandName {
+    text-transform: uppercase;
+    margin-left: 1rem;
+    color: var(--color1);
+    font-size: 1rem;
+    
+    @media(min-width: 767px) {
+        font-size: 2rem;
+    }
+}
+
+#iconContainer {
+    display: flex;
+    gap: 0 1rem;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+#iconContainer a img {
+    width: 0.9rem;
+
+    @media(min-width: 767px) {
+        width: 1.5rem;
+    }
+}
+
+#iconContainer a #xIcon {
+    @media(min-width: 767px) {
+        width: 1.25rem;
+    }
+}
+
+main #mainContentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+#leftContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem 0;
+    max-width: 100%;
+    position: relative;
+
+    #reviewsContainer {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 0 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
+        padding: 1rem 0.5rem;
+        
+        @media (max-width: 767px) {
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        img {
+            width: 1rem;
+        }
+    }
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.sub {
+    @media (max-width: 767px) {
+        text-align: center;
+    }
+}
+
+h1 strong, .sub strong {
+    color: var(--color1);
+}
+
+#mainCta {
+    @media (max-width: 767px) {
+        margin: 0 auto;
+    }
+}
+
+#rightContent .formMainContainer {
+    background: rgba(255, 255, 255, 1);
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 1px 1px 1px 1px var(--color1);
+    width: 250px;
+
+    @media (max-width: 1024px) {
+        margin: 0 auto;
+    }
+
+    @media (min-width: 1024px) {
+        margin-left: auto;
+    }
+}
+
+.card .errorMessagesContainers {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem 0;
+    justify-content: center;
+}
+
+#contactErrorMessages {
+    font-size: 0.75rem;
+    position: absolute;
+}
+
+.cardLogoContainer {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.formLogo {
+    width: 4rem;
+    transition: 2s;
+}
+
+.formLogo:hover {
+    transform: rotate(360deg);
+}
+
+.cardHeader, .formFooter {
+    text-align: center;
+}
+
+.cardHeader {
+    margin-bottom: 2rem;
+}
+
+.formTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.formTxt {
+    font-size: 0.8rem;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formItem {
+    position: relative;
+}
+
+.formItem label {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+}
+
+.formItem input[type="text"], 
+.formItem textarea, 
+.formItem input[type="email"] {
+    border: none;
+    outline: none;
+    padding: 1rem 1.5rem;
+    padding-left: calc(1rem * 3.5);
+    border-radius: 1rem;
+    width: calc(100% - 5rem);
+    transition: background 0.5s;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.formItem input[type="text"]:focus, 
+.formItem textarea:focus, 
+.formItem input[type="email"]:focus {
+    background: white;
+}
+
+.formItem textarea {
+    border-radius: 1rem;
+    padding-top: 2rem;
+    resize: none;
+}
+
+.inputContainers {
+    position: relative;
+}
+
+.inputContainers::after {
+    position: absolute;
+    right: -1rem;
+    top: 0;
+    content: "*";
+    color: red;
+    opacity: 0.8;
+}
+
+.itemIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+    font-size: 1.5rem;
+    opacity: 0.5;
+    color: black;
+}
+
+.nameValidation, .emailValidation, .messageValidation {
+    position: absolute;
+    font-size: 0.75rem;
+    color: mediumseagreen;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    padding: 0.5rem;
+}
+
+.emailError, .nameError, .messageError {
+    position: absolute;
+    bottom: -1rem;
+    left: 2rem;
+    font-size: 0.75rem;
+    color: red;
+}
+
+.messageError {
+    bottom: -2rem;
+}
+
+.formBtn {
+    color: white;
+    padding: 1rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background 0.5s;
+    font-size: 1rem;
+    font-weight: bolder;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    background-color: var(--color1);
+    width: 100%;
+}
+
+.formBtn:hover {
+    color: black;
+    cursor: pointer;
+}
+
+#reCaptcha {
+    margin: 0 auto;
+}
+
+footer {
+    .mapContainer {
+        #map {
+            height: 200px;
+            border-top: black solid 1px;
+        }
+    }
+}
+
+@media (min-width: 767px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .section {
+        padding: 2rem;
+    }
+
+    #reviewsContainer {
+        margin: none !important;
+    }
+
+    .cta {
+        padding: 1rem;
+    }
+
+    .formMainContainer {
+        width: 350px !important;
+    }
+
+    #leftContent {
+        gap: 2.5rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section {
+        padding: 2rem 4rem;
+    }
+
+    header {
+        flex-wrap: nowrap;
+    }
+
+    #headerCta {
+        margin-top: 0;
+    }
+
+    main #mainContentContainer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    #leftContent {
+        text-align: left;
+        gap: 3rem 0;
+    }
+
+    #logo {
+        margin-left: 2rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    #rightContent {
+        width: 45%;
+    }
+}
